@@ -14,17 +14,17 @@ namespace Full_GRASP_And_SOLID.Library
         private ArrayList steps = new ArrayList();
 
         public Product FinalProduct { get; set; }
+
+    
         public double GetProductionCost()
         {
         double CostoTotal=0;
-        double CostoInsumos= 0;
-        double CostoEquipamiento=0;
         foreach (Step step in steps)
         {
-            CostoInsumos += step.Input.UnitCost;
-            CostoEquipamiento += step.Time * step.Equipment.HourlyCost;
+            CostoTotal += step.GetStepCost();
+            
         }
-        return CostoTotal = CostoEquipamiento + CostoInsumos;
+        return CostoTotal;
         }
 
         public void AddStep(Step step)
