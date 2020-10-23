@@ -23,12 +23,12 @@ namespace Full_GRASP_And_SOLID.Library
         public int Time { get; set; }
 
         public Equipment Equipment { get; set; }
+        
+        /// <summary>
+        /// Por patron expert, la clase step es la encargada en calcular el costo de cada paso, 
+        /// esto ya que es la que tiene toda la informacion para este calculo.
+        /// </summary>
 
-
-
-       
-
-  
         public double GetStepCost()
         {
             return this.Quantity * this.Input.UnitCost + this.Time * this.Equipment.HourlyCost;

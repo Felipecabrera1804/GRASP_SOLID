@@ -15,7 +15,11 @@ namespace Full_GRASP_And_SOLID.Library
 
         public Product FinalProduct { get; set; }
 
-    
+        /// <summary>         
+        /// Por patron expert, la clase Recipe es la encargada en calcular el total del costo          
+        /// de la receta, invocando GetStepCost para cada Step de la lista. Esto ya que es la clase         
+        /// experta de la información necesaria para el calculo porque conoce todos los steps por la lista        
+        ///  </summary>
         public double GetProductionCost()
         {
         double CostoTotal=0;
